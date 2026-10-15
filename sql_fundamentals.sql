@@ -14,15 +14,15 @@ branch_id INT
 );
 
 INSERT INTO employee
-VALUES(100,'David','Wallace','1967-11-17','M',250000,NULL,1),
-		(101,'Jan','Levinson','1961-05-11','F',110000,100,1),
-		(102,'Micheal','Scott','1964-03-15','M',75000,100,2),
-		(103,'Angella','Martin','1972-06-25','F',63000,102,2),
-		(104,'Kelly','Kapoor','1980-02-05','F',55000,102,2),
-		(105,'Stanley','Hudson','1958-02-19','M',69000,102,2),
-		(106,'Josh','Porter','1969-09-05','M',78000,100,3),
-		(107,'Andy','Benard','1973-07-22','M',65000,100,3),
-		(108,'Jim','Halpert','1978-10-01','M',71000,106,3);
+VALUES(100,'David','Arinda','1967-11-17','M',250000,NULL,1),
+		(101,'Janet','Olwol','1961-05-11','F',110000,100,1),
+		(102,'Micheal','Asiimwe','1964-03-15','M',75000,100,2),
+		(103,'Angella','Nagawa','1972-06-25','F',63000,102,2),
+		(104,'Phil','Kyamulesire','1980-02-05','F',55000,102,2),
+		(105,'Stanley','Morton','1958-02-19','M',69000,102,2),
+		(106,'Joshua','Baraka','1969-09-05','M',78000,100,3),
+		(107,'Andrew','Musinguzi','1973-07-22','M',65000,100,3),
+		(108,'Jimmy','Mulongo','1978-10-01','M',71000,106,3);
 
 CREATE TABLE branch(
 branch_id INT,
@@ -44,7 +44,7 @@ INSERT INTO Client
 VALUES(400, 'Dunmore Highschool', 2),
 (401, 'Lackawana Country', 2),
 (402, 'FedEx', 3),
-(403, 'John Daly Law, LLC', 3),
+(403, 'John Daily Law, LLC', 3),
 (404, 'Scranton Whitepages', 2),
 (405, 'Times Newspaper', 3),
 (406, 'FedEx', 2);
