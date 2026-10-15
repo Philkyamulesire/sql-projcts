@@ -1,7 +1,9 @@
 # sql-projcts
 
 Company Database SQL Project
+
 Overview
+
 This project creates a Microsoft SQL Server database for a fictional company. It stores information about employees, branches, clients, sales, and suppliers.
 
 Database Tables
