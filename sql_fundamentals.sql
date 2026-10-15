@@ -1,6 +1,19 @@
+-- PROJECT: Company Database
+-- PURPOSE: Create and populate a database that stores
+--          employees, branches, clients, sales and suppliers.
+-- DBMS: Microsoft SQL Server
+-- =========================================================
+
+
+--STEP 1: Create the company database
+
 CREATE DATABASE company_database;
 
+-- Select the database to use for the following operations
+
 USE company_database;
+
+-- CREATE THE EMPLOYEE TABLE
 
 CREATE TABLE employee(
 emp_id INT NOT NULL,
@@ -13,6 +26,11 @@ super_id INT,
 branch_id INT
 );
 
+-- Stores employee personal information, salaries,
+-- supervisors and the branches where employees work.
+--
+
+
 INSERT INTO employee
 VALUES(100,'David','Arinda','1967-11-17','M',250000,NULL,1),
 		(101,'Janet','Olwol','1961-05-11','F',110000,100,1),
@@ -24,11 +42,20 @@ VALUES(100,'David','Arinda','1967-11-17','M',250000,NULL,1),
 		(107,'Andrew','Musinguzi','1973-07-22','M',65000,100,3),
 		(108,'Jimmy','Mulongo','1978-10-01','M',71000,106,3);
 
+-- CREATE THE BRANCH TABLE
+-- Stores branch details and information about branch
+-- managers and the dates they started managing.
+--
+
 CREATE TABLE branch(
 branch_id INT,
 branch_name VARCHAR(255),
 mgr_id INT,
 mgr_start_date DATE);
+
+
+-- INSERT BRANCH RECORDS
+-- Adds the company's three branches and their managers.
 
 INSERT INTO branch
 VALUES(1,'Corperate',100,'2006-02-09'),
@@ -80,9 +107,26 @@ VALUES (2, 'Hammer Mill', 'Paper'),
 (3, 'Hammer Mill', 'Paper'),
 (3, 'Stamford Lables', 'Custom Forms');
 
+'Paper'),
+    (3,'Hammer Mill', 'Paper'),
+    (3, 'Stamford Lables', 'Custom Forms');
+
+
+-- RENAME TABLES
+-- Changes the employee and branch table names
+-- to use capitalized names.
+--
+
+
 EXEC sp_rename 'employee','Employee';
 
 EXEC sp_rename 'branch','Branch';
+
+
+-- DEFINE THE EMPLOYEE PRIMARY KEY
+-- Ensures emp_id is NOT NULL and uniquely identifies
+-- each employee.
+--
 
 ALTER TABLE Employee
 ALTER COLUMN emp_id INT NOT NULL;
@@ -104,6 +148,11 @@ ALTER COLUMN client_id INT NOT NULL;
 ALTER TABLE Client
 ADD CONSTRAINT client_id_pkey
 PRIMARY KEY(client_id);
+
+-- ADD THE EMPLOYEE SUPERVISOR FOREIGN KEY
+-- Links super_id to emp_id in the same Employee table.
+-- This represents the employee-supervisor relationship.
+--
 
 ALTER TABLE Employee
 ADD CONSTRAINT sup_id_fkey 
